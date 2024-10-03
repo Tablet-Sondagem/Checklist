@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Checklist Geologia&Proespeccao</title>
+</head>
+
+<body>
+    <div id="mainView" class="navigation">
+        <h1>LISTA DE VERIFICAÇÃO DE EQUIPAMENTOS DIGITAIS</h1>
+        <h2>SELECIONE O CHECKLIST</h2>
+        <nav class="checklist-container">
+            <ul>
+                <li><a href="#" data-checklist="CAMINHÃO-SONDA" aria-label="Checklist para CAMINHÃO-SONDA">CAMINHÃO
+                        SONDA</a></li>
+                <li><a href="#" data-checklist="compressor" aria-label="Checklist para Compressor">COMPRESSOR</a></li>
+                <li><a href="#" data-checklist="sondaDb520" aria-label="Checklist para Sonda DB520">SONDA DB520</a></li>
+                <li><a href="#" data-checklist="sondaRotativa" aria-label="Checklist para Sonda Rotativa">SONDA
+                        ROTATIVA</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Vista de Checklist: CAMINHÃO SONDA -->
+    <div id="CAMINHÃO-SONDA" class="checklist-section">
+        <div class="checklist-header">
+            <div class="logo">
+                <img src="imagenes/Alcoalogo.png" alt="Alcoa Logo">
+            </div>
+            <div class="header-info">
+                <table>
+                    <tr>
+                        <td>Nº</td>
+                        <td>JUR-GEO-FOR-0007</td>
+                    </tr>
+                    <tr>
+                        <td>DATA</td>
+                        <td><input type="date" id="datePicker1" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>REV.</td>
+                        <td>
+                            <select id="revSelect1" disabled>
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Botão</td>
+                        <td><button id="unlockButton1" onclick="enableFields(1)">desbloqueio</button>
+                            <button id="lockButton1" onclick="disableFields(1)" style="display:none;">bloqueio</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <h2>Checklist Diário de CAMINHÃO-SONDA</h2>
+
+        <table class="vehicle-info">
+            <tr>
+                <td>Veiculo:</td>
+                <td>
+                    Caminhão
+                </td>
+                <td>Placa:</td>
+                <td>
+                    QVM2C08
+                </td>
+                <td>TAG:</td>
+                <td>SR03</td>
+                <td>Turno:</td>
+                <td>
+                    <select>
+                        <option value="Turno">Turno</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Marca / Modelo:</td>
+                <td>
+                    Axor 3131 6x4
+                </td>
+                <td>Mês Atual:</td>
+                <td>
+                    <select>
+                        <option value="">Mês Atual</option>
+                        <option value="Janeiro">Janeiro</option>
+                        <option value="Fevereiro">Fevereiro</option>
+                        <option value="Março">Março</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Maio">Maio</option>
+                        <option value="Junho">Junho</option>
+                        <option value="Julho">Julho</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Setembro">Setembro</option>
+                        <option value="Outubro">Outubro</option>
+                        <option value="Novembro">Novembro</option>
+                        <option value="Dezembro">Dezembro</option>
+                    </select>
+                </td>
+                <td>Ano Atual:</td>
+                <td>
+                    <input type="text" id="ano-input" placeholder="INSIRA O ANO" style="width: 80%;">
+                </td>
+                <td colspan="2" style="text-align: center" ;>
+                    <div style="padding: 10px;">
+                        <button type="button" id="auto-avaliacao-button"
+                            style="background-color: #007bff; color: white; width: 200px; height: 50px;"
+                            onclick="abrirFormulario()">AUTO AVALIAÇÃO DO MOTORISTA</button>
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table id="checklist-table-Caminhao">
+            <thead>
+                <tr>
+
+                    <!-- Generar columnas para los días del mes -->
+
+                </tr>
+            </thead>
+
+            <table id="checklist-table-Caminhao">
+                <thead>
+                    <tr>
+                        <th class="item-column">Item</th>
+                        <script>
+                            for (let day = 1; day <= 31; day++) {
+                                document.write(`<th class="day-column">Día ${day}</th>`);
+                            }
+                        </script>
+                    </tr>
+                </thead>
+                <tbody id="checklist-body-Caminhao">
+                    <!-- Las filas se generarán aquí dinámicamente con JavaScript -->
+                </tbody>
+                <tr>
+                    <td colspan="118" class="header right"
+                        style="color: rgb(0, 0, 0); background-color: grey; border: 1px solid black; font-weight: bold; font-size: larger;">
+                        HORIMETRO
+                    </td>
+                </tr>
+                <td colspan="1" style="width: 100px; vertical-align: top; padding: 0; border: 1px solid black;">
+
+                    <span style="font-weight: 300; font-size: 20px;width: 50%; margin-top: 5px;">NOME</span>
+
+                </td>
+
+                <td colspan="100" style="text-align: center; vertical-align: middle; height: 150px; width: 100px;">
+                    <button id="signatureButtonCAMINHÃO-SONDA"
+                        onclick="openSignatureModal(this, 'signatureModalCAMINHÃO-SONDA', 'signatureCanvasCAMINHÃO-SONDA')"
+                        style="width: 100%; height: 100%; transform: rotate(-180deg); writing-mode: vertical-rl; font-weight: 300; font-size: 12px;">
+                        Assinatura
+                    </button>
+                </td>
+            </table>
+
+
+
+
+            <!-- Modal de Firma -->
+            <div id="signatureModalCAMINHÃO-SONDA"
+                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000;">
+                <div
+                    style="background: white; padding: 20px; border-radius: 10px; display: flex; flex-direction: column; align-items: center;">
+                    <canvas id="signatureCanvasCAMINHÃO-SONDA" width="400" height="200"
+                        style="border: 1px solid black;"></canvas>
+                    <button onclick="clearSignatureCAMINHÃOSONDA()">Limpo</button>
+                    <button onclick="saveSignatureCAMINHÃOSONDA()">Salvar assinatura</button>
+                </div>
+            </div>
+
+            <table class="formulario">
+                <thead>
+                    <tr>
+                        <th colspan="118" class="header right"
+                            style="color: rgb(0, 0, 0); background-color: rgba(145, 138, 138, 0.363); border: 1px solid black;">
+                            AÇÃO REQUERIDA</th>
+                    </tr>
+                    </tr>
+
+                    <tr>
+                        <th colspan="13" class="header right"
+                            style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">ITEM</th>
+                        <th colspan="65" class="header right"
+                            style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">DESCRIÇÃO DAS
+                            AÇÕES
+                        </th>
+                        <th colspan="30" class="header right"
+                            style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">RESPONSÁVEL</th>
+                        <th colspan="10" class="header right"
+                            style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">DATA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filas de contenido dinámico aquí -->
+                    <tr>
+                        <td colspan="13" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                        <td colspan="65" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                        <td colspan="30" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                        <td colspan="10" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="13" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                        <td colspan="65" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                        <td colspan="30" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                        <td colspan="10" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="13" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                        <td colspan="65" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                        <td colspan="30" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                        <td colspan="10" style="height: 21px;">
+                            <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                        </td>
+                    </tr>
+                </tbody>
+                <tr>
+                    <th colspan="118" class="header right"
+                        style="color: rgb(0, 0, 0); background-color: rgba(145, 138, 138, 0.363); border: 1px solid black;">
+                        OBSERVAÇÕES</th>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <td colspan="118" class="note" style="height: 15px; font-size: 15px;">
+                            * Caso haja qualquer item mandatório em <span class="vermelho"
+                                style="color:red">VERMELHO</span>
+                            - <span class="negrito" style="color:red">NEGRITO</span> - <span class="asterisco"
+                                style="color:red">*ASTERISCO</span> com avaliação
+                            insuficiente, o equipamento deverá ser retirado de operação até que o reparo dos itens sejam
+                            corrigidos (acionar a manutenção).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="118" class="warning" style="height: 15px; font-size: 15px;">
+                            Atenção: Não abrir o reservatório de água/radiador ou qualquer outro compartimento
+                            pressurizado.
+                            Qualquer anormalidade acionar a manutenção.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="118" class="instructions" style="height: 15px; font-size: 15px;">
+                            1. Todas as vezes que for utilizar o equipamento, este check-list deverá ser executado,
+                            mesmo
+                            que já tenha sido preenchido o check-list do dia, sendo registrada as anormalidades.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="118" class="instructions" style="height: 15px; font-size: 15px;">
+                            2. É proibido realizar qualquer atividade dentro do compartimento no motor com o mesmo em
+                            funcionamento.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                            <div class="desempenho">Ferramenta de Desempenho Humano</div>
+                            Caso haja algum item esteja marcado como insuficiente, aplicar a ferramenta:
+
+                            <div class="pare">PARE e BUSQUE AJUDA</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="118" class="header right"
+                            style="color: rgb(0, 0, 0); background-color: rgba(145, 138, 138, 0.363); border: 1px solid black;">
+                            DESEMPENHO HUMANO</th>
+                    <tr>
+                        <td colspan="59" class="note" style="height: 15px; font-size: 15px;">
+                            Ferramenta de Desempenho Humano.
+                        </td>
+                        <td colspan="59" class="warning" style="height: 15px; font-size: 15px;">
+                            Critérios de Parada
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="59" class="instructions" style="height: 60px; font-size: 15px;">
+                            Casa haja algum ítem esteja marcado como insuficiente, aplicar a
+                            ferramenta: PARE e BUSQUE AJUDA
+
+                        </td>
+
+                        <td colspan="14.5" class="warning" style="height: 15px; font-size: 15px;">Identificação de item
+                            impeditivo no check list</td>
+                        <td colspan="14.5" class="warning" style="height: 15px; font-size: 15px;">Falta de Autorização
+                            para a atividade</td>
+                        <td colspan="14.5" class="warning" style="height: 15px; font-size: 15px;">Falta de Treinamentos
+                            Mandatórios e Específicos</td>
+                        <td colspan="14.5" class="warning" style="height: 15px; font-size: 15px;">Falta de Procedimento
+                            para a execução da atividade</td>
+
+                    </tr>
+
+                </tfoot>
+
+            </table>
+            <button class="submit-button" onclick="generatePDF('CAMINHÃO-SONDA')">Salvar em PDF</button>
+            <a class="back-button" onclick="showMainView()">Voltar ao início</a>
+    </div>
+
+    <div id="autoAvaliacaoForm" class="checklist-section" style="display: none;">
+        <div class="checklist-header">
+            <div class="logo">
+                <img src="imagenes/Alcoalogo.png" alt="Alcoa Logo">
+            </div>
+            <div class="header-info">
+                <table>
+                    <tr>
+                        <td>Nº</td>
+                        <td>JUR-SOC-FOR-0012</td>
+                    </tr>
+                    <tr>
+                        <td>DATA</td>
+                        <td><input type="date" id="datePicker2" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>REV.</td>
+                        <td>
+                            <select id="revSelect2" disabled>
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Botão</td>
+                        <td><button id="unlockButton2" onclick="enableFields(2)">desbloqueio</button>
+                            <button id="lockButton2" onclick="disableFields(2)" style="display:none;">bloqueio</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h2>Auto Avaliação do Motorista</h2>
+
+
+        <table id="checklist-table-auto">
+            <thead>
+                <tr>
+                    <th style="width: 200px;">Item</th>
+                    <!-- Generar columnas para los días del mes -->
+                    <script>
+                        for (let day = 1; day <= 31; day++) {
+                            document.write(`<th>Día ${day}</th>`);
+                        }
+                    </script>
+                </tr>
+            </thead>
+
+            <tbody id="checklist-body-Auto">
+                <!-- Las filas serán generadas dinámicamente con JavaScript -->
+            </tbody>
+
+            <table id="Auto">
+                <tr>
+                    <!-- Celda de "CONDUCTOR" y "CHAPA" en el mismo recuadro, separados por una línea -->
+                    <td colspan="1" style="width: 100px; vertical-align: top; padding: 0; border: 1px solid black;">
+                        <div style="height: 10%; border-bottom: 1px solid black; padding: 5px;">
+                            <select id="conductorAuto" style="width: 50%; margin-top: 5px;"
+                                onchange="updateConductorName('conductorAuto', 'selectedConductorAuto')">
+                                <option value="Conductor"></option>
+                                <option value="Ildoson Almeida">Ildoson Almeida</option>
+                                <option value="Ivanildo Santarém">Ivanildo Santarém</option>
+                                <option value="Lecindio Soares">Lecindio Soares</option>
+                                <option value="Wilson Silva">Wilson Silva</option>
+                                <option value="Auricélio Santana">Auricélio Santana</option>
+                                <option value="Antonio Carlos Souza">Antonio Carlos Souza</option>
+                                <option value="Diego Pinheiro">Diego Pinheiro</option>
+                                <option value="Edenilson Alves">Edenilson Alves</option>
+                                <option value="Erick Lima">Erick Lima</option>
+                                <option value="Ericson Souza">Ericson Souza</option>
+                                <option value="Jean Claudio Qaueiroz">Jean Claudio Qaueiroz</option>
+                                <option value="Rodolfo">Rodolfo</option>
+                            </select>
+                            <!-- Elemento para mostrar el conductor seleccionado -->
+                            <span id="selectedConductorAuto"
+                                style="display: block; font-weight: bold; margin-top: 5px;"></span>
+                        </div>
+
+                        <div style="height: 10%; padding: 15px;">
+                            <label for="chapaAuto">CHAPA (Nº de Cracha):</label>
+                            <input type="text" id="chapaAuto" style="width: 60%; margin-top: 20px;" />
+                        </div>
+                    </td>
+                    <td colspan="100" style="text-align: center; vertical-align: middle; height: 150px; width: 100px;">
+                        <button id="signatureButtonAutocond"
+                            onclick="openSignatureModal(this, 'signatureModalAutocond', 'signatureCanvasAutocond')"
+                            style="width: 100%; height: 100%; transform: rotate(-180deg); writing-mode: vertical-rl; font-weight: 300; font-size: 12px;">
+                            Assinatura
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <!-- Celda de "SUPERVISOR/ENCARREGADO" y "CHAPA" en el mismo recuadro, separados por una línea -->
+                    <td colspan="1" style="width: 100px; vertical-align: top; padding: 0; border: 1px solid black;">
+                        <div style="height: 10%; border-bottom: 1px solid black; padding: 5px;">
+                            <span style="width: 50%; margin-top: 5px;">SUPERVISOR/ENCARREGADO</span>
+                        </div>
+                        <div style="height: 10%; padding: 15px;">
+                            <label for="chapaSuper">CHAPA (Nº de Cracha):</label>
+                            <input type="text" id="chapaSuper" style="width: 60%; margin-top: 20px;" />
+                        </div>
+                    </td>
+
+                    <!-- Celda de firma -->
+                    <td colspan="100" style="text-align: center; vertical-align: middle; height: 150px; width: 100px;">
+                        <button id="signatureButtonAutoAvaliacaosuper"
+                            onclick="openSignatureModal(this, 'signatureModalAutoAvaliacaosuper', 'signatureCanvasAutoAvaliacaosuper')"
+                            style="width: 100%; height: 100%; transform: rotate(-180deg); writing-mode: vertical-rl; font-weight: 300; font-size: 12px;">
+                            Assinatura
+                        </button>
+                    </td>
+                </tr>
+            </table>
+
+
+            <div id="signatureModalAutocond"
+                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000;">
+                <div
+                    style="background: white; padding: 20px; border-radius: 10px; display: flex; flex-direction: column; align-items: center;">
+                    <canvas id="signatureCanvasAutocond" width="400" height="200"
+                        style="border: 1px solid black;"></canvas>
+                    <button onclick="clearSignatureAutocond()">Limpiar</button>
+                    <button onclick="saveSignatureAutocond()">Guardar Firma</button>
+
+                </div>
+            </div>
+
+            <div id="signatureModalAutoAvaliacaosuper"
+                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000;">
+                <div
+                    style="background: white; padding: 20px; border-radius: 10px; display: flex; flex-direction: column; align-items: center;">
+                    <canvas id="signatureCanvasAutoAvaliacaosuper" width="400" height="200"
+                        style="border: 1px solid black;"></canvas>
+                    <button onclick="clearSignatureAutoAvaliacaosuper()">Limpiar</button>
+                    <button onclick="saveSignatureAutoAvaliacaosuper()">Guardar Firma</button>
+
+                </div>
+            </div>
+            <table class="formulario">
+
+                <tr>
+                    <th colspan="118" class="header right"
+                        style="color: rgb(0, 0, 0); background-color: grey; border: 1px solid black;">RESULTADO DA
+                        AVALIAÇÃO</th>
+                </tr>
+
+                <th class="header" style="color: black; background-color: transparent;">
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <div style="width: 20%; text-align: center; padding: 25px 0;"></div>
+                        <div style="display: flex; flex-direction: column;">
+                            <div style="height: 50%; border-bottom: 1px solid black;">APTO</div>
+                            <div style="height: 50%;">INAPTO</div>
+                        </div>
+                    </div>
+                </th>
+                <script>
+                    for (let day = 1; day <= 31; day++) {
+                        document.write(`
+                        <th colspan="1" class="header right" style="background-color: transparent; height: 50px;">
+                            <div style="display: flex; flex-direction: column; height: 50%;">
+                                <div style="height: 50%; border-bottom: 1px solid black; display: flex; justify-content: center; align-items: center;">
+                                    <input type="checkbox" style="width: 100%; height: 100%;">
+                                </div>
+                                <div style="height: 50%; display: flex; justify-content: center; align-items: center;">
+                                    <input type="checkbox" style="width: 100%; height: 100%;">
+                                </div>
+                                </div>
+                            </div>
+                        </th>
+                    `);
+                    }
+                </script>
+                <tr>
+                    <th colspan="118" class="header right"
+                        style="color: rgb(0, 0, 0); background-color: grey; border: 1px solid black;">TURNO DE
+                        TRABALHO</th>
+                </tr>
+                <th class="header" style="color: black; background-color: transparent;">
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <div style="width: 20%; text-align: center; padding: 25px 0;"></div>
+                        <div style="display: flex; flex-direction: column;">
+                            <div style="height: 50%; border-bottom: 1px solid black;">DIURNO</div>
+                            <div style="height: 50%;">NOTURNO</div>
+                        </div>
+                    </div>
+                </th>
+                <script>
+                    for (let day = 1; day <= 31; day++) {
+                        document.write(`
+                        <th colspan="1" class="header right" style="background-color: transparent; height: 50px;">
+                            <div style="display: flex; flex-direction: column; height: 50%;">
+                                <div style="height: 50%; border-bottom: 1px solid black; display: flex; justify-content: center; align-items: center;">
+                                    <input type="checkbox" style="width: 100%; height: 100%;">
+                                </div>
+                                <div style="height: 50%; display: flex; justify-content: center; align-items: center; margin-top: 9px;">
+                                    <input type="checkbox" style="width: 100%; height: 100%;">
+                                </div>
+                            </div>
+                        </th>
+                    `);
+                    }
+                </script>
+                <tr>
+
+                    <td colspan="118" class="warning" style="height: 15px; font-size: 25px;">
+                        Observação: O motorista somente poderá iniciar suas atividades , após realizar a Auto-Avaliação
+                        com o reconhecimento da Supervisão
+                        / Encarregado com a avaliação de APTO para a atividade
+                    </td>
+
+                </tr>
+            </table>
+            <button class="submit-button" onclick="saveForm()">Guardar Avaliação</button>
+            <a class="back-button" onclick="showChecklist('CAMINHÃO-SONDA')">Voltar</a>
+    </div>
+
+
+    <!-- Vista de Checklist: COMPRESSOR -->
+    <div id="compressor" class="checklist-section">
+        <div class="checklist-header">
+            <div class="logo">
+                <img src="imagenes/Alcoalogo.png" alt="Alcoa Logo">
+            </div>
+            <div class="header-info">
+                <table>
+                    <tr>
+                        <td>Nº</td>
+                        <td>JUR-GEO-FOR-0004</td>
+                    </tr>
+                    <tr>
+                        <td>DATA</td>
+                        <td><input type="date" id="datePicker3" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>REV.</td>
+                        <td>
+                            <select id="revSelect3" disabled>
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Botão</td>
+                        <td><button id="unlockButton3" onclick="enableFields(3)">desbloqueio</button>
+                            <button id="lockButton3" onclick="disableFields(3)" style="display:none;">bloqueio</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <h2>Checklist - COMPRESSOR</h2>
+
+        <table class="vehicle-info">
+            <tr>
+                <td>Empresa</td>
+                <td>
+                    <input type="text" id="empresaInput">
+                </td>
+
+                <td>TAG:</td>
+                <td>SR03</td>
+            </tr>
+            <tr>
+                <td>Marca / Modelo:</td>
+                <td>
+                    Axor 3131 6x4
+                </td>
+                <td>Mês Atual:</td>
+                <td>
+                    <select>
+                        <option value="">Mês Atual</option>
+                        <option value="Janeiro">Janeiro</option>
+                        <option value="Fevereiro">Fevereiro</option>
+                        <option value="Março">Março</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Maio">Maio</option>
+                        <option value="Junho">Junho</option>
+                        <option value="Julho">Julho</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Setembro">Setembro</option>
+                        <option value="Outubro">Outubro</option>
+                        <option value="Novembro">Novembro</option>
+                        <option value="Dezembro">Dezembro</option>
+                    </select>
+                </td>
+                <td>Ano Atual:</td>
+                <td>
+                    <input type="text" id="ano-input" placeholder="INSIRA O ANO" style="width: 80%;">
+                </td>
+            </tr>
+        </table>
+        <table id="checklist-table-Compressor">
+            <thead>
+                <tr>
+                    <th class="item-column">Item</th>
+                    <!-- Generar los encabezados de los días (1-31) dinámicamente con JavaScript -->
+                    <script>
+                        for (let day = 1; day <= 31; day++) {
+                            document.write(`<th class="day-column">Día ${day}</th>`);
+                        }
+                    </script>
+                </tr>
+            </thead>
+            <tbody id="checklist-body-Compressor">
+                <!-- Las filas se generarán aquí dinámicamente con JavaScript -->
+            </tbody>
+            <tr>
+                <td colspan="118" class="header right"
+                    style="color: rgb(0, 0, 0); background-color: grey; border: 1px solid black; font-weight: bold; font-size: larger;">
+                    HORIMETRO
+                </td>
+            </tr>
+            <td colspan="1" style="width: 100px; vertical-align: top; padding: 0; border: 1px solid black;">
+
+                <span style="font-weight: 300; font-size: 20px;width: 50%; margin-top: 5px;">NOME</span>
+
+            </td>
+
+            <td colspan="100" style="text-align: center; vertical-align: middle; height: 150px; width: 100px;">
+                <button id="signatureButtonCompressor"
+                    onclick="openSignatureModal(this, 'signatureModalCompressor', 'signatureCanvasCompressor')"
+                    style="width: 100%; height: 100%; transform: rotate(-180deg); writing-mode: vertical-rl; font-weight: 300; font-size: 12px;">
+                    Assinatura
+                </button>
+            </td>
+        </table>
+
+
+        <!-- Modal de Firma -->
+        <div id="signatureModalCompressor"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000;">
+            <div
+                style="background: white; padding: 20px; border-radius: 10px; display: flex; flex-direction: column; align-items: center;">
+                <canvas id="signatureCanvasCompressor" width="400" height="200"
+                    style="border: 1px solid black;"></canvas>
+                <button onclick="clearSignatureCompressor()">Limpiar</button>
+                <button onclick="saveSignatureCompressor()">Guardar Firma</button>
+            </div>
+        </div>
+
+        <table class="formulario">
+            <thead>
+                <tr>
+                    <th colspan="118" class="header right"
+                        style="color: rgb(0, 0, 0); background-color: rgba(145, 138, 138, 0.363); border: 1px solid black;">
+                        AÇÃO REQUERIDA</th>
+                </tr>
+                </tr>
+
+                <tr>
+                    <th colspan="13" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">ITEM</th>
+                    <th colspan="65" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">DESCRIÇÃO DAS
+                        AÇÕES
+                    </th>
+                    <th colspan="30" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">RESPONSÁVEL</th>
+                    <th colspan="10" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">DATA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Filas de contenido dinámico aquí -->
+                <tr>
+                    <td colspan="13" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="65" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="30" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="10" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="13" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="65" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="30" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="10" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="13" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="65" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="30" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="10" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                </tr>
+            </tbody>
+            <tr>
+                <th colspan="118" class="header right"
+                    style="color: rgb(0, 0, 0); background-color: rgba(145, 138, 138, 0.363); border: 1px solid black;">
+                    OBSERVAÇÕES</th>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="118" class="note" style="height: 15px; font-size: 15px;">
+                        1. Caso haja qualquer item mandatório em <span class="vermelho"
+                            style="color:red">VERMELHO</span>
+                        com avaliação insuficiente, o equipamento deverá ser retirado de operação até que o reparo
+                        dos itens
+                        sejam corrigidos (acionar a manutenção).
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="warning" style="height: 15px; font-size: 15px;">
+                        2. Não realizar reparos. Não abrir o reservatório de água/radiador nem realizar manuseio no
+                        motor
+                        com o mesmo quente ou funcionando
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="instructions" style="height: 15px; font-size: 15px;">
+                        3.Todas as vezes que for utilizar o equipamento, este check list deverá ser executado, mesmo
+                        que já
+                        tenha sido preenchido o do dia, sendo registrado as anormalidades em separadamente e
+                        comunicadas ao
+                        encarregado de
+                        manutenção ou veículos
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="instructions" style="height: 15px; font-size: 15px;">
+                        4.Os seguintes itens relacionados a seguir são opcionais, devendo ser contemplados em
+                        APR/Procedimento dependendo da atividade (identificação a serviço da mina juruti na porta do
+                        veículo, identificação de capacidade de carga,sistema inteligente de anti-colisão, rádio de
+                        comunicação, cabine climatizada com sistema de filtragem de particulados, kit de 1º socorros
+                        e kit
+                        de emergência)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        5.É proíbido realizar qualquer atividade dentro do compartimento no motor com o mesmo em
+                        funcionamento
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <span class="vermelho" style="color:red">
+                            Casa haja algum ítem esteje marcado como isuficiente,aplicar a ferramenta: PARE e BUSQUE
+                            AJUDA
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <span class="vermelho" style="color:red">
+                            Identificação de item impeditivo no check list
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <span class="vermelho" style="color:red">
+                            d Falta e Autorização para a atividade
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <span class="vermelho" style="color:red">Falta de Treinamentos Mandatórios e Específicos
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <span class="vermelho" style="color:red">
+                            Falta de Procedimento para a execução da atividade</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <!-- ImagenBase64 STOP -->
+                    </td>
+                </tr>
+                </tr>
+            </tfoot>
+
+        </table>
+
+        <button class="submit-button" onclick="generatePDF('compressor')">Salvar em PDF</button>
+        <a class="back-button" onclick="showMainView()">Voltar ao início</a>
+    </div>
+
+    <!-- Vista de Checklist: SONDA DB520 -->
+    <div id="sondaDb520" class="checklist-section">
+        <div class="checklist-header">
+            <div class="logo">
+                <img src="imagenes/Alcoalogo.png" alt="Alcoa Logo">
+            </div>
+            <div class="header-info">
+                <table>
+                    <tr>
+                        <td>Nº</td>
+                        <td>JUR-GEO-FOR-0004</td>
+                    </tr>
+                    <tr>
+                        <td>DATA</td>
+                        <td><input type="date" id="datePicker4" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>REV.</td>
+                        <td>
+                            <select id="revSelect4" disabled>
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Botão</td>
+                        <td><button id="unlockButton4" onclick="enableFields(4)">desbloqueio</button>
+                            <button id="lockButton4" onclick="disableFields(4)" style="display:none;">bloqueio</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <h2>Checklist - SONDA PERFURATRIZ DB 520</h2>
+
+        <table class="vehicle-info">
+            <tr>
+                <td>Empresa</td>
+                <td>
+                    <input type="text" id="empresaInput">
+                </td>
+
+                <td>TAG:</td>
+                <td>SR03</td>
+            </tr>
+            <tr>
+                <td>Marca / Modelo:</td>
+                <td>
+                    Axor 3131 6x4
+                </td>
+                <td>Mês Atual:</td>
+                <td>
+                    <select>
+                        <option value="">Mês Atual</option>
+                        <option value="Janeiro">Janeiro</option>
+                        <option value="Fevereiro">Fevereiro</option>
+                        <option value="Março">Março</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Maio">Maio</option>
+                        <option value="Junho">Junho</option>
+                        <option value="Julho">Julho</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Setembro">Setembro</option>
+                        <option value="Outubro">Outubro</option>
+                        <option value="Novembro">Novembro</option>
+                        <option value="Dezembro">Dezembro</option>
+                    </select>
+                </td>
+                <td>Ano Atual:</td>
+                <td>
+                    <input type="text" id="ano-input" placeholder="INSIRA O ANO" style="width: 80%;">
+                </td>
+            </tr>
+        </table>
+
+        <table id="checklist-table-Sonda">
+            <thead>
+                <tr>
+                    <th class="empty-column"></th> <!-- Columna vacía -->
+                    <!-- Generar los encabezados de los días (1-31) dinámicamente con JavaScript -->
+                    <script>
+                        for (let day = 1; day <= 31; day++) {
+                            document.write(`<th class="day-column">Día ${day}</th>`);
+                        }
+                    </script>
+                </tr>
+            </thead>
+
+            <tbody id="checklist-body-Sonda">
+                <!-- Las filas se generarán aquí dinámicamente con JavaScript -->
+            </tbody>
+            <tr>
+                <td colspan="118" class="header right"
+                    style="color: rgb(0, 0, 0); background-color: grey; border: 1px solid black; font-weight: bold; font-size: larger;">
+                    HORIMETRO
+                </td>
+            </tr>
+            <td colspan="1" style="width: 100px; vertical-align: top; padding: 0; border: 1px solid black;">
+
+                <span style="font-weight: 300; font-size: 20px;width: 50%; margin-top: 5px;">NOME</span>
+
+            </td>
+            <td colspan="100" style="text-align: center; vertical-align: middle; height: 150px; width: 100px;">
+                <button id="signatureButtonSonda"
+                    onclick="openSignatureModal(this, 'signatureModalSonda', 'signatureCanvasSonda')"
+                    style="width: 100%; height: 100%; transform: rotate(-180deg); writing-mode: vertical-rl; font-weight: 300; font-size: 12px;">
+                    Assinatura
+                </button>
+            </td>
+        </table>
+
+        <!-- Modal de Firma -->
+        <div id="signatureModalSonda"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000;">
+            <div
+                style="background: white; padding: 20px; border-radius: 10px; display: flex; flex-direction: column; align-items: center;">
+                <canvas id="signatureCanvasSonda" width="400" height="200" style="border: 1px solid black;"></canvas>
+                <button onclick="clearSignatureSonda()">Limpo</button>
+                <button onclick="saveSignatureSonda()">Salvar assinatura</button>
+
+            </div>
+        </div>
+
+
+        <table class="formulario">
+            <thead>
+                <tr>
+                    <th colspan="118" class="header right"
+                        style="color: rgb(0, 0, 0); background-color: rgba(145, 138, 138, 0.363); border: 1px solid black;">
+                        AÇÃO REQUERIDA</th>
+                </tr>
+                </tr>
+
+                <tr>
+                    <th colspan="13" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">ITEM</th>
+                    <th colspan="65" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">DESCRIÇÃO DAS
+                        AÇÕES
+                    </th>
+                    <th colspan="30" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">RESPONSÁVEL</th>
+                    <th colspan="10" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">DATA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Filas de contenido dinámico aquí -->
+                <tr>
+                    <td colspan="13" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="65" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="30" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="10" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="13" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="65" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="30" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="10" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="13" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="65" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="30" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="10" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                </tr>
+            </tbody>
+            <tr>
+                <th colspan="118" class="header right"
+                    style="color: rgb(0, 0, 0); background-color: rgba(145, 138, 138, 0.363); border: 1px solid black;">
+                    OBSERVAÇÕES</th>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="118" class="note" style="height: 15px; font-size: 15px;">
+                        1. Caso haja qualquer item mandatório em <span class="vermelho"
+                            style="color:red">VERMELHO</span>
+                        com avaliação insuficiente, o equipamento deverá ser retirado de operação até que o reparo
+                        dos itens
+                        sejam corrigidos (acionar a manutenção).
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="warning" style="height: 15px; font-size: 15px;">
+                        2. Não realizar reparos. Não abrir o reservatório de água/radiador nem realizar manuseio no
+                        motor
+                        com o mesmo quente ou funcionando
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="instructions" style="height: 15px; font-size: 15px;">
+                        3.Todas as vezes que for utilizar o equipamento, este check list deverá ser executado, mesmo
+                        que já
+                        tenha sido preenchido o do dia, sendo registrado as anormalidades em separadamente e
+                        comunicadas ao
+                        encarregado de
+                        manutenção ou veículos
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="instructions" style="height: 15px; font-size: 15px;">
+                        4.Os seguintes itens relacionados a seguir são opcionais, devendo ser contemplados em
+                        APR/Procedimento dependendo da atividade (identificação a serviço da mina juruti na porta do
+                        veículo, identificação de capacidade de carga,sistema inteligente de anti-colisão, rádio de
+                        comunicação, cabine climatizada com sistema de filtragem de particulados, kit de 1º socorros
+                        e kit
+                        de emergência)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        5.É proíbido realizar qualquer atividade dentro do compartimento no motor com o mesmo em
+                        funcionamento
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <span class="vermelho" style="color:red">
+                            Casa haja algum ítem esteje marcado como isuficiente,aplicar a ferramenta: PARE e BUSQUE
+                            AJUDA
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <span class="vermelho" style="color:red">
+                            Identificação de item impeditivo no check list
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <span class="vermelho" style="color:red">
+                            d Falta e Autorização para a atividade
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <span class="vermelho" style="color:red">Falta de Treinamentos Mandatórios e Específicos
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <span class="vermelho" style="color:red">
+                            Falta de Procedimento para a execução da atividade</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="footer" style="height: 15px; font-size: 15px;">
+                        <!-- ImagenBase64 STOP -->
+                    </td>
+                </tr>
+                </tr>
+            </tfoot>
+
+        </table>
+
+        <button class="submit-button" onclick="generatePDF('sondaDb520')">Salvar em PDF</button>
+        <a class="back-button" onclick="showMainView()">Voltar ao início</a>
+    </div>
+
+    <!-- Vista de Checklist: SONDA ROTATIVA -->
+    <div id="sondaRotativa" class="checklist-section">
+        <div class="checklist-header">
+            <div class="logo">
+                <img src="imagenes/Alcoalogo.png" alt="Alcoa Logo">
+            </div>
+            <div class="header-info">
+                <table>
+                    <tr>
+                        <td>Nº</td>
+                        <td>JUR-GEO-FOR-0004</td>
+                    </tr>
+                    <tr>
+                        <td>DATA</td>
+                        <td><input type="date" id="datePicker5" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>REV.</td>
+                        <td>
+                            <select id="revSelect5" disabled>
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Botão</td>
+                        <td><button id="unlockButton5" onclick="enableFields(5)">desbloqueio</button>
+                            <button id="lockButton5" onclick="disableFields(5)" style="display:none;">bloqueio</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <h2>Checklist - SONDA PERFURATRIZ ROTOPNEUMÁTICA R1HBXM</h2>
+
+        <table class="vehicle-info">
+            <tr>
+                <td>Empresa</td>
+                <td>
+                    <input type="text" id="empresaInput">
+                </td>
+                <td>Equipamento:</td>
+                <td>
+                    <input type="text" id="placaInput">
+                </td>
+                <td>TAG:</td>
+                <td>SR03</td>
+            </tr>
+            <tr>
+                <td>Marca / Modelo:</td>
+                <td>
+                    Axor 3131 6x4
+                </td>
+                <td>Mês Atual:</td>
+                <td>
+                    <select>
+                        <option value="">Mês Atual</option>
+                        <option value="Janeiro">Janeiro</option>
+                        <option value="Fevereiro">Fevereiro</option>
+                        <option value="Março">Março</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Maio">Maio</option>
+                        <option value="Junho">Junho</option>
+                        <option value="Julho">Julho</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Setembro">Setembro</option>
+                        <option value="Outubro">Outubro</option>
+                        <option value="Novembro">Novembro</option>
+                        <option value="Dezembro">Dezembro</option>
+                    </select>
+                </td>
+                <td>Ano Atual:</td>
+                <td>
+                    <input type="text" id="ano-input" placeholder="INSIRA O ANO" style="width: 80%;">
+                </td>
+            </tr>
+        </table>
+
+        <table id="checklist-table-SondaRotativa">
+            <thead>
+                <tr>
+                    <th class="empty-column"></th> <!-- Columna vacía -->
+                    <script>
+                        for (let day = 1; day <= 31; day++) {
+                            document.write(`<th class="day-column">Día ${day}</th>`);
+                        }
+                    </script>
+                </tr>
+            </thead>
+            <tbody id="checklist-body-SondaRotativa">
+                <!-- Las filas se generarán aquí dinámicamente con JavaScript -->
+            </tbody>
+            <tr>
+                <td colspan="118" class="header right"
+                    style="color: rgb(0, 0, 0); background-color: grey; border: 1px solid black; font-weight: bold; font-size: larger;">
+                    HORIMETRO
+                </td>
+            </tr>
+            <td colspan="1" style="width: 100px; vertical-align: top; padding: 0; border: 1px solid black;">
+
+                <span style="font-weight: 300; font-size: 20px;width: 50%; margin-top: 5px;">NOME</span>
+
+            </td>
+
+            <td colspan="100" style="text-align: center; vertical-align: middle; height: 150px; width: 100px;">
+                <button id="signatureButtonSondaRotativa"
+                    onclick="openSignatureModal(this, 'signatureModalSondaRotativa', 'signatureCanvasSondaRotativa')"
+                    style="width: 100%; height: 100%; transform: rotate(-180deg); writing-mode: vertical-rl; font-weight: 300; font-size: 12px;">
+                    Assinatura
+                </button>
+            </td>
+        </table>
+
+        <!-- Modal de Firma -->
+        <div id="signatureModalSondaRotativa"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000;">
+            <div
+                style="background: white; padding: 20px; border-radius: 10px; display: flex; flex-direction: column; align-items: center;">
+                <canvas id="signatureCanvasSondaRotativa" width="400" height="200"
+                    style="border: 1px solid black;"></canvas>
+                <button onclick="clearSignatureSondaRotativa()">Limpo</button>
+                <button onclick="saveSignatureSondaRotativa()">Salvar assinatura</button>
+
+            </div>
+        </div>
+
+        <table class="formulario">
+            <thead>
+                <tr>
+                    <th colspan="118" class="header right"
+                        style="color: rgb(0, 0, 0); background-color: rgba(145, 138, 138, 0.363); border: 1px solid black;">
+                        AÇÃO REQUERIDA</th>
+                </tr>
+                </tr>
+
+                <tr>
+                    <th colspan="13" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">ITEM</th>
+                    <th colspan="65" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">DESCRIÇÃO DAS
+                        AÇÕES
+                    </th>
+                    <th colspan="30" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">RESPONSÁVEL</th>
+                    <th colspan="10" class="header right"
+                        style="color: rgb(0, 0, 0);background-color: transparent; height: 20px; ">DATA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Filas de contenido dinámico aquí -->
+                <tr>
+                    <td colspan="13" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="65" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="30" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="10" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="13" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="65" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="30" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="10" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="13" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="65" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="30" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                    <td colspan="10" style="height: 21px;">
+                        <input type="text" style="width: 100%; height: 100%; box-sizing: border-box;" />
+                    </td>
+                </tr>
+            </tbody>
+            <tr>
+                <th colspan="118" class="header right"
+                    style="color: rgb(0, 0, 0); background-color: rgba(145, 138, 138, 0.363); border: 1px solid black;">
+                    OBSERVAÇÕES</th>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="118" class="note" style="height: 15px; font-size: 15px;">
+                        1. Caso haja qualquer item mandatório em <span class="vermelho"
+                            style="color:red">VERMELHO</span>
+                        com avaliação insuficiente, o equipamento deverá ser retirado de operação até que o reparo
+                        dos itens
+                        sejam corrigidos (acionar a manutenção).
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="warning" style="height: 15px; font-size: 15px;">
+                        2.O preenchimento deste check-list diário é de inteira responsabilidade do condutor do mesmo
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="instructions" style="height: 15px; font-size: 15px;">
+                        3.Todas as vezes que for utilizar o equipamento, este check list deverá ser executado, mesmo
+                        que já
+                        tenha sido preenchido o do dia, sendo registrado as anormalidades em separadamente e
+                        comunicadas ao
+                        encarregado de
+                        manutenção ou veículos
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="118" class="instructions" style="height: 15px; font-size: 15px;">
+                        4.Em caso de <span class="vermelho" style="color:red">EMERGENCIA</span> comunicar com o CCE
+                        radio faixa 1 ou celular (93) 98115 - 1738
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="118" class="header right"
+                        style="color: rgb(0, 0, 0); background-color: rgba(145, 138, 138, 0.363); border: 1px solid black;">
+                        DESEMPENHO HUMANO</th>
+                <tr>
+                    <td colspan="59" class="note" style="height: 15px; font-size: 15px;">
+                        Ferramenta de Desempenho Humano.
+                    </td>
+                    <td colspan="59" class="warning" style="height: 15px; font-size: 15px;">
+                        Critérios de Parada
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="59" class="instructions" style="height: 60px; font-size: 15px;">
+                        Casa haja algum ítem esteja marcado como insuficiente, aplicar a
+                        ferramenta: PARE e BUSQUE AJUDA
+
+                    </td>
+
+                    <td colspan="14.5" class="warning" style="height: 15px; font-size: 15px;"><span class="vermelho"
+                            style="color:red">Identificação de item
+                            impeditivo no check list</span></td>
+                    <td colspan="14.5" class="warning" style="height: 15px; font-size: 15px;"><span class="vermelho"
+                            style="color:red">Falta de Autorização
+                            para a atividade</span></td>
+                    <td colspan="14.5" class="warning" style="height: 15px; font-size: 15px;"><span class="vermelho"
+                            style="color:red">Falta de Treinamentos
+                            Mandatórios e Específicos</span></td>
+                    <td colspan="14.5" class="warning" style="height: 15px; font-size: 15px;"><span class="vermelho"
+                            style="color:red">Falta de Procedimento
+                            para a execução da atividade</span></td>
+
+                </tr>
+
+            </tfoot>
+
+        </table>
+        <button class="submit-button" onclick="generatePDF('sondaRotativa')">Salvar em PDF</button>
+        <a class="back-button" onclick="showMainView()">Voltar ao início</a>
+    </div>
+
+    <script src="./js/CAMINHÃO-SONDA.js" defer></script>
+    <script src="./js/autosonda.js" defer></script>
+    <script src="./js/compressor.js" defer></script>
+    <script src="./js/sonda520.js" defer></script>
+    <script src="./js/sondarotativa.js" defer></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        });
+    </script>
+
+    <script>
+        // Función para habilitar los campos de un formulario específico
+        function enableFields(formId) {
+            document.getElementById('datePicker' + formId).disabled = false;
+            document.getElementById('revSelect' + formId).disabled = false;
+            document.getElementById('lockButton' + formId).style.display = 'inline'; // Mostrar el botón de bloqueo
+            document.getElementById('unlockButton' + formId).style.display = 'none'; // Ocultar el botón de desbloqueo
+        }
+
+        // Función para bloquear los campos de un formulario específico
+        function disableFields(formId) {
+            document.getElementById('datePicker' + formId).disabled = true;
+            document.getElementById('revSelect' + formId).disabled = true;
+            document.getElementById('lockButton' + formId).style.display = 'none'; // Ocultar el botón de bloqueo
+            document.getElementById('unlockButton' + formId).style.display = 'inline'; // Mostrar el botón de desbloqueo
+        }
+
+        // Función que se ejecuta al cargar la página, estableciendo valores por defecto
+        window.onload = function () {
+            // Establecemos las fechas y valores de REV por defecto para cada formulario
+            document.getElementById('datePicker1').value = "2024-05-02";
+            document.getElementById('revSelect1').value = "01";
+
+            document.getElementById('datePicker2').value = "2024-03-08";
+            document.getElementById('revSelect2').value = "00";
+
+            document.getElementById('datePicker3').value = "2024-03-14";
+            document.getElementById('revSelect3').value = "01";
+
+            document.getElementById('datePicker4').value = "2024-03-14";
+            document.getElementById('revSelect4').value = "01";
+
+            document.getElementById('datePicker5').value = "2024-03-19";
+            document.getElementById('revSelect5').value = "03";
+
+            // Ocultamos los botones de bloqueo al inicio
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById('lockButton' + i).style.display = 'none';
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Función para manejar tanto clics como toques
+            function addClickTouchListener(element, handler) {
+                element.addEventListener('click', handler);
+                element.addEventListener('touchstart', function (e) {
+                    e.preventDefault();  // Previene el zoom en algunos dispositivos
+                    e.target.click();    // Simula un clic
+                });
+            }
+
+            // Manejar interacciones en los enlaces de checklist
+            const checklistLinks = document.querySelectorAll('.checklist-container a');
+            checklistLinks.forEach(link => {
+                addClickTouchListener(link, function (event) {
+                    event.preventDefault();
+                    const checklistType = this.getAttribute('data-checklist');
+                    showChecklist(checklistType);
+                });
+            });
+
+            // Manejar interacciones en los botones de "Voltar ao início"
+            const backButtons = document.querySelectorAll('.back-button');
+            backButtons.forEach(button => {
+                addClickTouchListener(button, function () {
+                    const target = this.getAttribute('data-target');
+                    if (target) {
+                        showChecklist(target);
+                    } else {
+                        showMainView();
+                    }
+                });
+            });
+
+            // Manejar interacción en el botón "AUTO AVALIAÇÃO DO MOTORISTA"
+            const abrirFormularioBtn = document.getElementById('abrirFormularioBtn');
+            if (abrirFormularioBtn) {
+                addClickTouchListener(abrirFormularioBtn, abrirFormulario);
+            }
+
+            // Manejar interacción en el botón "Guardar Avaliação"
+            const saveFormBtn = document.getElementById('saveFormBtn');
+            if (saveFormBtn) {
+                addClickTouchListener(saveFormBtn, saveForm);
+            }
+
+            // Mostrar la vista principal al cargar la página
+            showMainView();
+        });
+
+        function showMainView() {
+            hideAllSections();
+            const mainView = document.getElementById('mainView');
+            if (mainView) mainView.style.display = 'block';
+        }
+
+        function showChecklist(sectionId) {
+            hideAllSections();
+            const section = document.getElementById(sectionId);
+            if (section) section.style.display = 'block';
+        }
+
+        function hideAllSections() {
+            const sections = document.querySelectorAll('.navigation, .checklist-section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+        }
+
+        function abrirFormulario() {
+            hideAllSections();
+            const form = document.getElementById('autoAvaliacaoForm');
+            if (form) form.style.display = 'block';
+        }
+
+        function saveForm() {
+            alert('Avaliação guardada com sucesso!');
+            showChecklist('CAMINHÃO-SONDA');
+        }
+
+        // Hack para forzar el reflow en iOS
+        document.body.addEventListener('touchstart', function () { });
+
+        function updateConductorName(selectId, spanId) {
+            const selectElement = document.getElementById(selectId);
+            const spanElement = document.getElementById(spanId);
+            const selectedConductor = selectElement.options[selectElement.selectedIndex].text;
+            spanElement.textContent = selectedConductor;
+        }
+
+        // Clase para manejar la firma
+        class SignatureHandler {
+            constructor() {
+                this.currentSignatureCell = null;
+                this.modal = null;
+                this.canvas = null;
+                this.ctx = null;
+                this.drawing = false;
+            }
+
+            initialize(modalId, canvasId) {
+                this.modal = document.getElementById(modalId);
+                this.canvas = document.getElementById(canvasId);
+                this.ctx = this.canvas.getContext('2d');
+
+                this.canvas.addEventListener('mousedown', (e) => this.startDrawing(e));
+                this.canvas.addEventListener('mousemove', (e) => this.draw(e));
+                this.canvas.addEventListener('mouseup', () => this.stopDrawing());
+
+                this.canvas.addEventListener('touchstart', (e) => this.startTouchDrawing(e));
+                this.canvas.addEventListener('touchmove', (e) => this.touchDraw(e));
+                this.canvas.addEventListener('touchend', () => this.stopDrawing());
+                this.canvas.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
+            }
+
+            startDrawing(e) {
+                this.drawing = true;
+                this.ctx.beginPath();
+                this.ctx.moveTo(e.offsetX, e.offsetY);
+            }
+
+            draw(e) {
+                if (!this.drawing) return;
+                this.ctx.lineTo(e.offsetX, e.offsetY);
+                this.ctx.stroke();
+            }
+
+            startTouchDrawing(e) {
+                this.drawing = true;
+                const rect = this.canvas.getBoundingClientRect();
+                this.ctx.beginPath();
+                this.ctx.moveTo(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top);
+            }
+
+            touchDraw(e) {
+                if (!this.drawing) return;
+                const rect = this.canvas.getBoundingClientRect();
+                this.ctx.lineTo(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top);
+                this.ctx.stroke();
+            }
+
+            stopDrawing() {
+                this.drawing = false;
+            }
+
+            openModal(button, modalId, canvasId) {
+                this.currentSignatureCell = button.parentElement;
+                this.initialize(modalId, canvasId); // Initialize modal and canvas
+                this.modal.style.display = 'flex'; // Show the modal
+            }
+
+            closeModal() {
+                if (this.modal) this.modal.style.display = 'none'; // Hide the modal
+            }
+
+            clearSignature() {
+                if (this.ctx) this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height); // Clear the canvas
+            }
+
+            saveSignature() {
+                const dataURL = this.canvas.toDataURL();
+                const date = new Date();
+                const formattedDate = date.toLocaleString();
+                this.currentSignatureCell.innerHTML = `<img src="${dataURL}" style="width: 100%; height: 100%;"/><br><span style="font-size: 10px;">${formattedDate}</span>`;
+                this.closeModal();
+            }
+        }
+
+        // Inicializar el manejador de firmas
+        const signatureHandler = new SignatureHandler();
+
+        // Funciones genéricas para el manejo del modal de firma
+        function openSignatureModal(button, modalId, canvasId) {
+            signatureHandler.openModal(button, modalId, canvasId);
+        }
+
+        function clearSignatureCAMINHÃOSONDA() {
+            signatureHandler.clearSignature();
+        }
+
+        function saveSignatureCAMINHÃOSONDA() {
+            signatureHandler.saveSignature();
+        }
+
+
+        function clearSignatureAutocond() {
+            signatureHandler.clearSignature();
+        }
+
+        function saveSignatureAutocond() {
+            signatureHandler.saveSignature();
+        }
+
+        function clearSignatureAutoAvaliacaosuper() {
+            signatureHandler.clearSignature();
+        }
+
+        function saveSignatureAutoAvaliacaosuper() {
+            signatureHandler.saveSignature();
+        }
+
+
+
+        function clearSignatureSonda() {
+            signatureHandler.clearSignature();
+        }
+
+        function saveSignatureSonda() {
+            signatureHandler.saveSignature();
+        }
+
+
+
+        function clearSignatureCompressor() {
+            signatureHandler.clearSignature();
+        }
+
+        function saveSignatureCompressor() {
+            signatureHandler.saveSignature();
+        }
+
+        function clearSignatureSondaRotativa() {
+            signatureHandler.clearSignature();
+        }
+
+        function saveSignatureSondaRotativa() {
+            signatureHandler.saveSignature();
+        }
+
+
+    </script>
+    <script src="./js/exportToPDF.js" defer></script>
+</body>
+
+</html>
